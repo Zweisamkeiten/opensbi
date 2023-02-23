@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: BSD-2-Clause
+
+#
+# All mandatory drivers or libraries for this platform should
+# be directly selected by the PLATFORM_xyz kconfig symbol.
+#
+# All optional drivers or libraries for this platform should
+# be enabled via configs/defconfig of this platform.
+#
+# SPDX-License-Identifier: BSD-2-Clause
+
+config PLATFORM_QUARD_STAR
+	bool
+	select FDT
+	select FDT_DOMAIN
+	select FDT_PMU
+	default y
