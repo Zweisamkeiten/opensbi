@@ -246,6 +246,9 @@ static int __fdt_parse_region(void *fdt, int domain_offset,
 	 *
 	 * SU permission bits can't be all zeroes and M-mode permission
 	 * bits must be all set.
+   * 文档未即时更新: M-mode 权限必须全部设置, SU权限不能全为0
+   * bit0 M读 bit1 M写 bit2 M执行 bit3 SU读 bit4 SU写 bit5 SU执行
+   * bit6 强制权限位 (BIT[6]) 如果设置，将锁定权限在 PMP 中。  这也将强制执行 M 模式的权限否则将可以不受限制地访问。  该位必须与 小心，因为一旦 PMP 条目被锁定，就不能对其进行任何更改 直到hart被重置。
 	 */
 	if (!((region_access & SBI_DOMAIN_MEMREGION_SU_ACCESS_MASK)
 	     & SBI_DOMAIN_MEMREGION_SU_RWX)
