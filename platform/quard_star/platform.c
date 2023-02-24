@@ -22,7 +22,7 @@
 #include <sbi_utils/serial/semihosting.h>
 
 extern struct sbi_platform platform;
-static u32 generic_hart_index2id[SBI_HARTMASK_MAX_BITS] = { 0 };
+static u32 quard_star_hart_index2id[SBI_HARTMASK_MAX_BITS] = { 0 };
 
 /*
  * The fw_platform_init() function is called very early on the boot HART
@@ -71,7 +71,7 @@ unsigned long fw_platform_init(unsigned long arg0, unsigned long arg1,
 		if (!fdt_node_is_enabled(fdt, cpu_offset))
 			continue;
 
-		generic_hart_index2id[hart_count++] = hartid;
+		quard_star_hart_index2id[hart_count++] = hartid;
 	}
 
 	platform.hart_count = hart_count;
