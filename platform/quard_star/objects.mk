@@ -26,7 +26,7 @@ platform-objs-y += platform.o
 # platform-objs-y += <dt file name>.o
 
 # Firmware load address configuration. This is mandatory.
-FW_TEXT_START=0x80000000
+FW_TEXT_START=0xbff80000
 
 # Optional parameter for path to external FDT
 # FW_FDT_PATH="path to platform flattened device tree file"
